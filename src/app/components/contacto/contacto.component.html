@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Contact us</title>
+	<link rel="stylesheet" type="text/css" href="contacto.component.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+</head>
+
+<body>
+    <section class="container">
+		<nav>
+			<span class="logo">BECAS ULEAM</span>
+			<ul>
+				<li class="link"><a href="../pagina-web/"><strong>INICIO</strong></a></li>
+				<li class="link"><a href="../acerca-de-nosotros/"><strong>ACERCA DE NOSOTROS</strong></a></li>
+				<li class="link"><a href="../ayudas-economicas/"><strong>AYUDAS ECONÓMICAS </strong></a></li>
+				<li class="link"><a href="../consulta-de-beca/"><strong>CONSULTA </strong></a></li>
+			</ul>
+		</nav>
+    </section>
+
+	<section class="sol">
+		<form class="row " [formGroup]="myform" (ngSubmit)="onSubmit()">
+			<div class="contact-box">
+				<div class="left"></div>
+				<div class="right">
+					<h2>Contact Us</h2>
+
+					<input type="text" class="field" formControlName="username" placeholder="Jhon Doe" required>
+					<input type="email" class="field" formControlName="email" placeholder="jhon@gmail.com" required>
+
+
+
+					<button type="submit" class="btn" [disabled]="myform.invalid">Guardar</button>
+					<br><br>
+					<button class="btn" type="submit"><a href="javascript: history.go(-1)">Volver</a></button>
+
+				</div>
+			</div>
+		</form>
+	</section>
+</body>
+
+</html>

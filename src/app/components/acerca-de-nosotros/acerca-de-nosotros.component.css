@@ -1,0 +1,135 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    height: 12.2vh;
+    width: 100%;
+    background-color: white;
+    min-width: 2.5rem;
+
+}
+
+.logo {
+    width: 600;
+    font-size: 2.5rem;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 6px 20px;
+    font-weight: 500;
+    font-size: 1.7rem;
+    transition: all 0.3s ease;
+    font-size: 98.5%;
+}
+
+.continer ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 6px 20px;
+    font-weight: 500;
+    font-size: 1.7rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+ul li:hover {
+    background-color: grey;
+    border-radius: 0px;
+    text-decoration: none;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+
+}
+
+body {
+    height: 120vh;
+    background-color: #685b87;
+    min-height: 10%;
+}
+
+legend {
+    color: white;
+}
+
+tr th {
+    color: white;
+}
+
+td {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+img {
+    max-width: 100%;
+
+}
+
+.sol {
+    border: 1px solid #999;
+    box-sizing: border-box;
+    color: #444;
+    float: left;
+    margin: 0%;
+    padding: 1em;
+    width: 49%;
+    height: auto;
+    margin-top: auto;
+    background: rgba(7, 7, 7, 0.33);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+strong {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+
+}
+
+header {
+    font-size: auto;
+}
+
+head {
+    font-size: auto;
+}
+
+span {
+    font-size: 10%;
+}
+
+.pedro .emp {
+    position: absolute;
+    height: 600px;
+    width: 550px;
+    right: 7%;
+    bottom: 0;
+    z-index: 999;
+}

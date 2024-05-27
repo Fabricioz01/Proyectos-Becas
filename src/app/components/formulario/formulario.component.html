@@ -1,0 +1,139 @@
+<header>
+</header>
+
+<body>
+
+    <br>
+    <form class="formulario" [formGroup]="myforde" (ngSubmit)="onSubmit()">
+        <h2>Registro</h2> <br>
+        <br>
+
+
+        <div class="form-input">
+            <label><strong>Nombre de Usuario:</strong></label> <br>
+            <input class="form-control" type="text" formControlName="username">
+            <span *ngIf="this.myforde.get('username')?.errors?.['required']" class="text-danger">
+                Los <strong>nombres</strong> no puede quedar vacío
+            </span>
+            <span *ngIf="this.myforde.get('username')?.errors?.['minlength']" class="text-danger">
+                Debe tener como <strong>mínimo</strong> 5 caracteres
+            </span>
+        </div>
+
+        <br>
+
+        <div class="form-input">
+            <label><strong>Apellido de Usuario:</strong></label> <br>
+            <input class="form-control" type="text" formControlName="lastname">
+
+            <span *ngIf="this.myforde.get('lastname')?.errors?.['required']" class="text-danger">
+                Los <strong>nombres</strong> no puede quedar vacío
+            </span>
+            <span *ngIf="this.myforde.get('lastname')?.errors?.['minlength']" class="text-danger">
+                Debe tener como <strong>mínimo</strong> 5 caracteres
+            </span>
+        </div>
+
+        <br>
+
+        <div class="form-input">
+            <label><strong>Correo electrónico:</strong></label><br>
+            <input class="form-control" type="email" class="form-control" formControlName="email"
+                placeholder="example@gmail.com" required>
+            <span *ngIf="this.myforde.get('email')?.errors?.['required']" class="text-danger">
+                El <strong>email</strong> no puede quedar vacío
+            </span>
+            <span *ngIf="this.myforde.get('email')?.errors?.['email']" class="text-danger">
+                El <strong>email</strong> no es válido
+            </span>
+        </div>
+
+        <br>
+
+
+        <div class="form-input">
+            <label><strong>Contraseña:</strong></label> <br>
+            <input class="form-control" type="password" formControlName="password2">
+            <span *ngIf="this.myforde.get('password2')?.errors?.['required']" class="text-danger">
+                Los <strong>contraseña</strong> no puede quedar vacía
+            </span>
+            <span *ngIf="this.myforde.get('password2')?.errors?.['minlength']" class="text-danger">
+                Debe tener como <strong>mínimo</strong> 6 caracteres
+            </span>
+        </div>
+        <br>
+
+        <div class="form-input">
+            <label><strong>Teléfono:</strong></label> <br>
+            <input class="form-control" type="number" formControlName="phone" required>
+            <span *ngIf="myforde.get('phone')?.errors?.['required']" class="text-danger">
+                El <strong>teléfono</strong> no puede quedar vacío.
+            </span>
+            <span *ngIf="myforde.get('phone')?.errors?.['pattern']" class="text-danger">
+                El <strong>teléfono</strong> debe tener 10 dígitos numéricos.
+            </span>
+
+        </div>
+
+        <br>
+
+        <div class="form-input">
+            <label><strong>Nombre de carrera:</strong></label> <br>
+            <input class="form-control" type="text" formControlName="carrera">
+
+            <span *ngIf="this.myforde.get('carrera')?.errors?.['required']" class="text-danger">
+                El<strong>nombre</strong> no puede quedar vacío
+            </span>
+            <span *ngIf="this.myforde.get('carrera')?.errors?.['minlength']" class="text-danger">
+                Debe tener como <strong>mínimo</strong> 5 caracteres
+            </span>
+
+        </div>
+
+        <br>
+        <div class="form-input">
+            <label><strong>Nivel de carrera:</strong></label> <br>
+            <input class="form-control" type="text" formControlName="nivel">
+
+            <span *ngIf="this.myforde.get('nivel')?.errors?.['required']" class="text-danger">
+                El <strong>nivel de carrera</strong> no puede quedar vacío
+            </span>
+            <span *ngIf="this.myforde.get('nivel')?.errors?.['minlength']" class="text-danger">
+                Debe tener como <strong>mínimo</strong> 5 caracteres
+            </span>
+        </div>
+
+        <br>
+
+        <div class="form-input">
+            <label><strong>Número de personas en el hogar:</strong></label>
+            <input class="form-control" type="number" formControlName="persona" required>
+
+            <span *ngIf="myforde.get('persona')?.errors?.['required']" class="text-danger">
+                El <strong>teléfono</strong> no puede quedar vacío.
+            </span>
+            <span *ngIf="myforde.get('persona')?.errors?.['pattern']" class="text-danger">
+                El <strong>número de personas</strong> debe tener 2 dígitos numéricos.
+            </span>
+        </div>
+
+        <br>
+
+        <div class="link">
+            <br>
+            <p class="link-inicio"><a href="../login/"> ¿Ya tienes Cuenta? </a></p>
+            <br>
+        </div>
+        <br>
+        <div class="button-container">
+            <button type="submit" [disabled]="myforde.invalid">Guardar</button>
+            <button type="submit" onclick="history.back()">Regresar</button>
+        </div>
+
+
+    </form>
+    <br>
+
+    <br>
+    <footer> Pagina creada por Marco Proaño</footer>
+</body>
