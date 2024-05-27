@@ -1,0 +1,53 @@
+<header>
+
+</header>
+
+<body>
+    <br>
+    <form class="formulario" [formGroup]="myfa" (ngSubmit)="onSubmit()">
+        <h2>INICIA SESION</h2> <br>
+        <br>
+
+        <div class="correo">
+            <label><strong>Correo:</strong></label>
+            <input class="form-control" type="email" formControlName="email" placeholder="Correo electrónico" required>
+            <span *ngIf="this.myfa.get('email')?.errors?.['required']" class="text-danger">
+                El <strong>Correo</strong> no puede quedar vacío
+            </span>
+            <span *ngIf="this.myfa.get('email')?.errors?.['minlength']" class="text-danger">
+                Debe tener como <strong>mínimo</strong> 10 caracteres
+            </span>
+        </div>
+
+        <br>
+
+        <div class="form-input">
+            <label><strong>Contraseña:</strong></label>
+            <input class="form-control" type="password" formControlName="password" placeholder="Contraseña" required>
+            <span *ngIf="this.myfa.get('password')?.errors?.['required']" class="text-danger">
+                La <strong>contraseña</strong> no puede quedar vacía
+            </span>
+            <span *ngIf="this.myfa.get('password')?.errors?.['minlength']" class="text-danger">
+                Debe tener como <strong>mínimo</strong> 6 caracteres
+            </span>
+        </div>
+
+
+        <br>
+
+
+        <br>
+        <p class="link-registro"><a href="../formulario/"> ¿Aún no tienes cuenta? </a></p>
+        <br>
+
+        <div class="button-container">
+            <button type="submit" [disabled]="myfa.invalid">Guardar</button>
+            <button type="submit" onclick="history.back()">Regresar</button>
+        </div>
+    </form>
+    <br>
+    <div>
+    </div>
+    <br>
+    <footer> Pagina creada por Marco Proaño</footer>
+</body>

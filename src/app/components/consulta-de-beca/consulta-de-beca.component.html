@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Web</title>
+    <link rel="stylesheet" href="consulta-de-beca.component.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <span class="logo">BECAS ULEAM</span>
+            <ul>
+                <li class="link"><a href="../acerca-de-nosotros/"><strong>ACERCA DE NOSOTROS </strong></a></li>
+                <li class="link"><a href="../ayudas-economicas/"><strong>AYUDAS ECONÓMICAS </strong></a></li>
+                <li class="link"><a href="../contacto/"><strong>CONTACTO </strong></a></li>
+                <li class="link" type="submit" routerLink="/login" (click)="onClick()" ><a><strong>LOGOUT</strong></a></li> 
+            </ul>
+        </nav>
+
+
+        <div class="cont">
+          <h1>Consulta de Beca</h1>
+          <br>
+          <form>  
+              <label for="id_beca">ID de Beca:</label>
+              <br><br>
+              <input type="text"    id="id_beca" name="id_beca" required>
+              <br>
+              <button type="button" class="btn" (click)="consultarBeca()">Consultar</button>
+              &nbsp;
+              <button type="button" class="btn" [routerLink]="['/Pagina']">Regresar</button>
+            </form>
+         </div>
+
+         
+
+          <table id="tabla_resultado" *ngIf="idBecaConsultada">
+            <thead>
+              <tr>
+                <th>ID de Beca</th>
+                <th>Estado</th>
+                <th>Fecha de Aprobación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ idBecaConsultada.id }}</td>
+                <td>{{ idBecaConsultada.estado }}</td>
+                <td>{{ idBecaConsultada.fechaAprobacion }}</td>
+              </tr>
+            </tbody>          
+          </table>
+        </div>
+        </body>
+    
+</html>

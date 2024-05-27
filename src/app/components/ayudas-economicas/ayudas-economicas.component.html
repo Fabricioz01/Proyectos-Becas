@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="ayudas-economicas.component.css" />
+</head>
+
+<body>
+
+  <section class="container">
+    <header> </header>
+    <br>
+    <h2> Solicitud de Becas Y Ayudas Economicas</h2>
+
+    <form class="form" [formGroup]=" myforde" (ngSubmit)="onSubmit()">
+
+      <div class="input-box">
+        <label><strong>Nombres Completos:</strong></label>
+        <input class="form-control" type="text" formControlName="username" placeholder="Jhon Doe" required>
+      </div>
+
+      <br>
+
+      <div class="input-box">
+        <label><strong>Correo electrónico:</strong></label>
+        <input class="form-control" type="text" formControlName="email" placeholder="marco@gmail.com" required>
+      </div>
+
+      <br>
+
+      <div class="column">
+        <div class="input-box">
+          <label><strong>Teléfono:</strong></label>
+          <input class="form-control" type="number"  formControlName="phone"  placeholder="0980000000" required>        
+        </div>
+        <div class="input-box">
+          <label><strong>Fecha de nacimiento:</strong></label>
+          <input type="date"  formControlName="NDate" required>
+        </div>
+      </div>
+      
+      <br>
+      <div class="input-box address">
+        <label><strong>Datos de dirección:</strong></label>
+        <input class="form-control" placeholder="Barrio Miraflores " type="text" formControlName="address"  required>
+
+        <div class="column">
+          <div class="input-box address">
+            <input type="text" class="form-control" formControlName="pais"  placeholder="Ingrese su país" required />
+
+          </div>
+          <input type="text" class="form-control" formControlName="ciudad"  placeholder="Ingrese su ciudad" required />
+        </div>
+        <br>
+        <label><strong>Documento de notas:</strong></label>
+        <div class="column">
+          <input formControlName="archivo" type="file" class="formulario__input" name="archivo" id="archivo" accept=".pdf,.doc" required
+            onchange="validar()" /> <br>
+
+        </div>
+      </div>
+      <button [disabled]=" myforde.invalid">Enviar</button>
+      <button><a href="acerca-de-nosotros">Resgresar</a></button>
+      <br>
+
+    </form>
+  </section>
+  <script src>"index.js"</script>
+</body>
+
+</html>
